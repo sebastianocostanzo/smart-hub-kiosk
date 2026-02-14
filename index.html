@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Hub v87 | Button UX Refined</title>
+    <link rel="stylesheet" href="style_v87.css">
+</head>
+<body>
+    <div id="slide-1" class="slide-container active"><div id="blur-1" class="blur-bg"></div><div id="sharp-1" class="sharp-img"></div></div>
+    <div id="slide-2" class="slide-container"><div id="blur-2" class="blur-bg"></div><div id="sharp-2" class="sharp-img"></div></div>
+    <div class="overlay"></div>
+
+    <div id="debug-log"><strong>SYSTEM BOOT v90</strong><br></div>
+
+    <div class="top-bar">
+        <div id="temp-drawer-btn" onclick="toggleTopDrawer()">🌤️</div>
+        <div id="super-widget" class="top-drawer-content">
+            <div id="temp" onclick="toggleDebug()">--°</div>
+            <div id="widget-clock">00:00</div>
+            <div id="photo-desc">...</div>
+            <div id="photo-date">...</div>
+        </div>
+    </div>
+
+    <div id="ai-feedback">Initializing...</div>
+
+    <div id="control-drawer" class="hidden">
+    <div class="control-grid">
+        <div class="room-column">
+            <div class="room-label">👧 Karolina</div>
+            <div class="progress-track"><div id="prog-kid" class="progress-fill"></div></div>
+            <div class="btn-group">
+                <button class="ghost-btn" onclick="App.cover('kid','Open')">▲</button>
+                <button class="ghost-btn" onclick="App.cover('kid','Close')">▼</button>
+            </div>
+        </div>
+
+        <div class="room-column">
+            <div class="room-label">📺 TV Area</div>
+            <div class="progress-track"><div id="prog-tv_area" class="progress-fill"></div></div>
+            <div class="btn-group">
+                <button class="ghost-btn" onclick="App.cover('tv_area','Open')">▲</button>
+                <button class="ghost-btn" onclick="App.cover('tv_area','Close')">▼</button>
+            </div>
+        </div>
+
+        <div class="room-column">
+            <div class="room-label">🛋️ Sofa</div>
+            <div class="progress-track"><div id="prog-sofa" class="progress-fill"></div></div>
+            <div class="btn-group">
+                <button class="ghost-btn" onclick="App.cover('sofa','Open')">▲</button>
+                <button class="ghost-btn" onclick="App.cover('sofa','Close')">▼</button>
+            </div>
+        </div>
+
+        <div class="room-column">
+            <div class="room-label">🛏️ Master</div>
+            <div class="progress-track"><div id="prog-master" class="progress-fill"></div></div>
+            <div class="btn-group">
+                <button class="ghost-btn" onclick="App.cover('master','Open')">▲</button>
+                <button class="ghost-btn" onclick="App.cover('master','Close')">▼</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="tv-console">
+        <div class="room-label">TV</div>
+        <button class="tv-main-v2" onclick="App.tv('system', 'setPowerStatus', [{status: true}])">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18.36 6.64a9 9 0 1 1-12.73 0"></path><line x1="12" y1="2" x2="12" y2="12"></line></svg>
+        </button>
+        <div class="tv-row">
+            <button class="tv-sub" onclick="App.tv('audio','setAudioVolume',[{target:'speaker',volume:'-3'}])">-</button>
+            <button class="tv-sub" onclick="App.tv('audio','setAudioVolume',[{target:'speaker',volume:'+3'}])">+</button>
+        </div>
+    </div>
+
+    <div id="drawer-toggle" onclick="toggleDrawer()">◀</div>
+</div>      
+            <div class="tv-console">
+                <div class="room-label">TV</div>
+                <button class="tv-main-v2" onclick="App.tv('system', 'setPowerStatus', [{status: true}])">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18.36 6.64a9 9 0 1 1-12.73 0"></path><line x1="12" y1="2" x2="12" y2="12"></line></svg>
+                </button>
+                <div class="tv-row">
+                    <button class="tv-sub" onclick="App.tv('audio','setAudioVolume',[{target:'speaker',volume:'-3'}])">-</button>
+                    <button class="tv-sub" onclick="App.tv('audio','setAudioVolume',[{target:'speaker',volume:'+3'}])">+</button>
+                </div>
+            </div>
+        </div>
+        <div id="drawer-toggle" onclick="toggleDrawer()">▶</div>
+    </div>
+
+    <div id="mic-btn" onclick="App.triggerVoice()">🎙️</div>
+
+    <script src="app_v87.js"></script>
+    <script src="tests_v87.js"></script>
+</body>
+</html>
